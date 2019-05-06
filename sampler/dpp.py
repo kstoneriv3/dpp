@@ -22,7 +22,7 @@ def sample(D, V, E=None, k=None, flag_gpu=False):
 
     rst = list()
 
-    for i in xrange(k-1,-1,-1):
+    for i in range(k-1,-1,-1):
         # choose indices
 
         P = np.sum(V**2, axis=1)

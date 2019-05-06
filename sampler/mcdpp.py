@@ -1,7 +1,7 @@
 import numpy as np
 import time
-import quadrature
-import utils
+from . import quadrature
+from . import utils
 
 # MCDPP sampler
 # input:
@@ -11,7 +11,7 @@ import utils
 #   init_rst: initialization
 #   flag_gpu: use gpu acceleration
 
-def sample(L, mix_step, k=None, init_rst=None, flag_gpu=False):
+def sample(L, mix_step, k=None, init_rst=None, flag_gpu=False, silent=False):
     N = L.shape[0]
     rst = init_rst
     tic_len = mix_step // 5
@@ -24,7 +24,7 @@ def sample(L, mix_step, k=None, init_rst=None, flag_gpu=False):
 
         A = np.copy(L[np.ix_(rst, rst)])
 
-        for i in xrange(mix_step):
+        for i in range(mix_step):
             if (i+1) % tic_len == 0:
                 print('{}-th iteration.'.format(i+1))
 
@@ -64,9 +64,10 @@ def sample(L, mix_step, k=None, init_rst=None, flag_gpu=False):
 
         A = np.copy(L[np.ix_(rst, rst)])
 
-        for i in xrange(mix_step):
-            if (i+1) % tic_len == 0:
-                print('{}-th iteration.'.format(i+1))
+        for i in range(mix_step):
+            if silent==False:
+                if (i+1) % tic_len == 0:
+                    print('{}-th iteration.'.format(i+1))
             rem_ind = np.random.randint(k)
             add_ind = np.random.randint(N-k)
             v = rst[rem_ind]

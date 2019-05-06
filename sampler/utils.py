@@ -30,7 +30,7 @@ def get_sympoly(D, k, flag_gpu=False):
         E = np.zeros((k+1, N+1))
 
     E[0] = 1.
-    for l in xrange(1,k+1):
+    for l in range(1,k+1):
         E[l,1:] = np.copy(np.multiply(D, E[l-1,:N]))
         E[l] = np.cumsum(E[l], axis=0)
 
@@ -56,7 +56,7 @@ def kpp(X, k, flag_kernel=False):
     if flag_kernel:
         # kernel kmeans++
         v = np.ones(N) * np.inf
-        for i in xrange(1, k):
+        for i in range(1, k):
             Y = np.diag(X) + np.ones(N)*X[rst[i-1],rst[i-1]] - 2*X[rst[i-1]]
             v = np.minimum(v,Y)
             r = np.random.uniform()
@@ -65,7 +65,7 @@ def kpp(X, k, flag_kernel=False):
     else:
         # normal kmeans++
         centers = [X[rst[0]]]
-        for i in xrange(1, k):
+        for i in range(1, k):
             dist = np.array([min([np.linalg.norm(x-c)**2 for c in centers]) for x in X])
             r = np.random.uniform()
             ind = np.where(dist.cumsum() / dist.sum() >= r)[0][0]

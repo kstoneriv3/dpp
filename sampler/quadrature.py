@@ -37,7 +37,7 @@ def gauss_dpp_judge(A, u, prob, lambda_min, lambda_max):
     truth = np.inner(u, inv(A).dot(u));
 
     # CGQL Main Iteration
-    for k in xrange(2*K):
+    for k in range(2*K):
         # print('--k: {}'.format(k))
 
         newGamma = np.dot(u, u) / np.dot(p, np.dot(A, p))
@@ -218,7 +218,7 @@ def gauss_kdpp_judge(A, u, v, prob, tar, lambda_min, lambda_max):
     elif tar >= prob * np.min(gauss_V[2:]) - np.max(gauss_U[:2]):
         return False
 
-    for k in xrange(2*K):
+    for k in range(2*K):
         if gap_U >= prob * gap_V:
             newGamma_U = np.dot(u, u) / np.dot(p_U, np.dot(A, p_U))
             alpha_U = 1 / newGamma_U + beta_U / gamma_U

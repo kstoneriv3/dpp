@@ -1,0 +1,6 @@
+/dev/*
+/data/mnist/*
+/helper/__pycache__/*
+/sampler/__pycache__/*
+
+!/dev/demo*

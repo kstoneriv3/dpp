@@ -25,8 +25,8 @@ k_group = [10,20,30,50,70,100]
 error_unif = np.zeros((2, len(k_group)))
 error_dpp = np.zeros((2, len(k_group)))
 
-for run_id in xrange(5):
-	for k_idx in xrange(len(k_group)):
+for run_id in range(5):
+	for k_idx in range(len(k_group)):
 		k = k_group[k_idx]
 		# Uniform sampling
 		unif_smpl = np.random.permutation(nTrn)[:k]
