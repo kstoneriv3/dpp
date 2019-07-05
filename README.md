@@ -1,36 +1,23 @@
 # Determinantal Point Process
 
-This repository includes sampling methods for *determinantal point processes* (*DPP*s). It is still under development.
+This repository includes the source code for Gaussian process regression combined with the Nystrom approxomation by k-DPP sampling. The results of the numerical experiments can be checked in the "./demo.ipynb".
 
 ## Prerequisites
-* `Python 2.7`
+* `Python 3.7`
 * `numpy`
 * `scipy`
 * `matplotlib`
-* `Matlab`
-
-## Currently Available Methods
-
-* (Python) Exact (k)DPP sampling (with eigen-decomposition)
-* (Python) Markov Chain Monte Carlo Sampling for (k)DPP (with Gaussian-Auadrature Acceleration)
-* (Matlab) Markov Chain Monte Carlo Sampling for (k)DPP (with Gaussian-Auadrature Acceleration)
+* `multiprocessing`
+* `time`
 
 ---
 
-## Toy Demo ('demo.py')
+## Demo on Gaussian Process with Nystrom Method
 
-![](fig/unif-dpp-mcdpp.png)
-
-![](fig/unif-kdpp-mckdpp.png)
-
-## Demo on Nystrom Method
+For the landmark selection of the Nystrom method, we used 4 methods;
+* uniform sampling
+* k-DPP (by Gibbs sampling)
+* simmulated annealing of the MAP of k-DPP
+* greedy algorithm for the likelihood maximization
 
 ![](fig/nystrom.png)
-
-## Demo on Approximate Kernel Ridge Regression 
-
-![](fig/regression.png)
-
-## Demo on Approximate Kernel Logistic Regression
-
-![](fig/classification.png)

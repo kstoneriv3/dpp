@@ -157,3 +157,23 @@ def load_mnist(ntrain=4000, ntest=1000, onehot=False):
         teY = np.asarray(teY)
 
     return trX, teX, trY, teY
+
+def kl_gaussian(mu0, sigsq0, mu1, sigsq1):
+    return 1/2 * (np.log(sigsq1)-np.log(sigsq0) + sigsq0/sigsq1 - 1 + (mu0-mu1)**2/sigsq1)
+
+def kl_gaussian_vec(vec):
+    [mu0, sigsq0, mu1, sigsq1] = list(vec)
+    return kl_gaussian(mu0, sigsq0, mu1, sigsq1)
+
+def kl_multi_gaussian(mu0, S0, mu1, S1):
+    
+    assert(len(mu0)==len(mu1))
+    assert(S0.shape==S1.shape)
+    
+    k = len(mu0)
+    invS1 = np.linalg.inv(S1)
+    tr = np.sum(invS1*S0)
+    quad = ((mu1-mu0) @ invS1 @ (mu1-mu0))
+    logdet = np.linalg.slogdet(S1)[1] - np.linalg.slogdet(S0)[1]
+    
+    return 1/2 * (tr + quad - k + logdet)
