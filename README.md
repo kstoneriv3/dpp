@@ -20,4 +20,4 @@ For the landmark selection of the Nystrom method, we used 4 methods;
 * simmulated annealing of the MAP of k-DPP
 * greedy algorithm for the likelihood maximization
 
-![](fig/nystrom.png)
+![](fig/summary.png)
