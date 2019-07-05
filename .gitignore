@@ -2,5 +2,8 @@
 /data/mnist/*
 /helper/__pycache__/*
 /sampler/__pycache__/*
+/fig/*
+/*.py
 
-!/dev/demo*
+!/dev/demo.ipynb
+!/fig/summary.png
