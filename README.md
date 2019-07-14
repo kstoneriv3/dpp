@@ -19,6 +19,7 @@ The result can be replicated by running the jupyter notebook contained in the ma
 ## Prerequisites
 * `Python 3.7`
 * `numpy`
+* `pandas`
 * `scipy`
 * `matplotlib`
 * `multiprocessing`
