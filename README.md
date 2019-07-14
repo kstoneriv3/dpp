@@ -6,9 +6,9 @@ This repository includes the source code for Gaussian process regression combine
 
 For the landmark selection of the Nystrom method, following 4 methods were compared;
 * uniform sampling
+* greedy algorithm for the likelihood maximization
 * k-DPP (by Gibbs sampling)
 * simmulated annealing of the MAP of k-DPP
-* greedy algorithm for the likelihood maximization
 The result can be replicated by running the jupyter notebook contained in the main directory.  The aileron datasetused here is taken from [https://sci2s.ugr.es/keel/dataset.php?cod=93](https://sci2s.ugr.es/keel/dataset.php?cod=93).
 ![](fig/summary.png)
 
