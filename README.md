@@ -9,7 +9,9 @@ For the landmark selection of the Nystrom method, following 4 methods were compa
 * greedy algorithm for the likelihood maximization
 * k-DPP (by Gibbs sampling)
 * simmulated annealing of the MAP of k-DPP
-The result can be replicated by running the jupyter notebook contained in the main directory.  The aileron datasetused here is taken from [https://sci2s.ugr.es/keel/dataset.php?cod=93](https://sci2s.ugr.es/keel/dataset.php?cod=93).
+
+The result can be replicated by running the jupyter notebook contained in the main directory.  The dataset used here (aileron  dataset) is taken from [https://sci2s.ugr.es/keel/dataset.php?cod=93](https://sci2s.ugr.es/keel/dataset.php?cod=93).
+
 ![](fig/summary.png)
 
 ---
