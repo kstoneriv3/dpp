@@ -4,7 +4,7 @@ This repository includes the source code for Gaussian process regression combine
 
 ## Demo on Gaussian Process with Nystrom Method
 
-For the landmark selection of the Nystrom method, following 4 methods were compared;
+The following four landmark selection scheme (of Nystrom method) were compared;
 * uniform sampling
 * greedy algorithm for the likelihood maximization
 * k-DPP (by Gibbs sampling)
