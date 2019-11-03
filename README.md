@@ -1,6 +1,6 @@
 # Gauusian Process with DPP-Nystrom
 
-This repository includes the source code for Gaussian process regression combined with the Nystrom approxomation by k-DPP sampling. The results of the numerical experiments can be checked in the `./demo.ipynb`.
+This repository includes the source code for Gaussian process regression combined with the Nystrom approxomation by k-DPP sampling. The results of the numerical experiments can be checked in the `./demo.ipynb` or in this [report](DPP_GP.pdf). 
 
 ## Demo on Gaussian Process with Nystrom Method
 
